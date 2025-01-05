@@ -12,13 +12,16 @@ const container = document.querySelector(".content");
 container.style.border = "solid 20px red";
 container.style.borderRadius = "20px"
 container.style.width = "640px";
+container.style.height = "640px";
 container.style.display = "flex";
 container.style.flexWrap = "wrap";
 
 
 
 //Square Creation
-const createGrid = (size) => {
+const createGrid = () => {
+    const number = document.getElementById("gridSize").value;
+    const size = parseInt(number);
     for (i = 0; i < size * size; i++){
         const square = document.createElement("div");
         square.classList = "block";
@@ -40,7 +43,7 @@ const createGrid = (size) => {
         });
     };
 };
-createGrid(10);
+// createGrid(10);
 
 //Mouse Hovering Styling
 // const block = document.querySelectorAll('.block');
