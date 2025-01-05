@@ -47,7 +47,7 @@ const createGrid = () => {
         
         //On Hover Color Styling
         square.addEventListener('mouseover', e => {
-            e.target.style.backgroundColor = "lightblue";
+            e.target.style.backgroundColor = "black";
         })
 
         square.addEventListener('mouseout', e =>{
@@ -55,6 +55,10 @@ const createGrid = () => {
         });
     };
 };
+
+const randomColor = () => {
+    
+}
 
 
 
