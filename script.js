@@ -57,37 +57,13 @@ const createGrid = () => {
 };
 
 const randomColor = () => {
-    
+    let color = "#";
+    let char = "0123456789abcdef";
+    for(let i=0; i < 6; i++){
+        color += char[Math.floor(Math.random() * 16)];
+    }
+    return color;
 }
 
 
 
-
-// createGrid(10);
-
-//Mouse Hovering Styling
-// const block = document.querySelectorAll('.block');
-// block.forEach(block => {
-//     //On Hover Color Styling
-//     block.addEventListener('mouseover', e => {
-//         e.target.style.backgroundColor = "lightblue";
-//     })
-
-//     block.addEventListener('mouseout', e =>{
-//         e.target.style.backgroundColor = "lightgrey";
-//     })
-//     block.addEventListener('mouseover', e=> {
-//         block.addEventListener('mousemove', e => {
-//         const dot = document.createElement('div');
-//         dot.style.position = "absolute";
-//         dot.style.top = `${e.clientY}px`;
-//         // console.log("Client Y: ", e.clientY);
-//         dot.style.left = `${e.clientX}px`;
-//         // console.log("Client X: ", e.clientY);
-//         dot.style.backgroundColor = "red";
-//         dot.style.width = "3px";
-//         dot.style.height = "3px";
-//         block.appendChild(dot);
-//         });
-//     });
-// })
