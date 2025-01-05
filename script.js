@@ -18,15 +18,14 @@ container.style.flexWrap = "wrap";
 
 
 //Square Creation
-const createGrid = () => {
-    for (i = 0; i < 256; i++){
+const createGrid = (size) => {
+    for (i = 0; i < size * size; i++){
         const square = document.createElement("div");
         square.classList = "block";
-        square.style.height = "40px";
+        square.style.height = `${640/size}px`;
+        square.style.width = `${640/size}px`;
         square.style.boxSizing = "border-box";
-        square.style.aspectRatio = "1/1";
         square.style.backgroundColor = "lightgrey";
-        square.style.display = "flex";
         square.style.border = "dotted 1px black";
 
         container.appendChild(square);
@@ -38,13 +37,10 @@ const createGrid = () => {
 
         square.addEventListener('mouseout', e =>{
             e.target.style.backgroundColor = "lightgrey";
-        })
-
-
-
+        });
     };
 };
-createGrid();
+createGrid(10);
 
 //Mouse Hovering Styling
 // const block = document.querySelectorAll('.block');
