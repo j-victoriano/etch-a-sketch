@@ -17,9 +17,21 @@ container.style.display = "flex";
 container.style.flexWrap = "wrap";
 
 
+//Grid Clearing
+const resetGrid = () => {
+    let grid = document.querySelector('#grid');
+    while(grid.firstChild){
+        grid.removeChild(grid.firstChild);
+    };
+};
 
 //Square Creation
 const createGrid = () => {
+    // let grid = document.querySelector('#grid');
+    // while(grid.firstChild){
+    //     grid.removeChild(grid.firstChild);
+    // };
+    resetGrid();
     const number = document.getElementById("gridSize").value;
     const size = parseInt(number);
     for (i = 0; i < size * size; i++){
@@ -44,12 +56,7 @@ const createGrid = () => {
     };
 };
 
-const resetGrid = () => {
-    let grid = document.querySelector('#grid');
-    while(grid.firstChild){
-        grid.removeChild(grid.firstChild);
-    };
-};
+
 
 
 // createGrid(10);
