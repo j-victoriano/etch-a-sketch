@@ -12,7 +12,6 @@ const container = document.querySelector(".content");
 container.style.border = "solid 20px red";
 container.style.borderRadius = "20px"
 container.style.width = "640px";
-container.boxSizing = "border-box"
 container.style.display = "flex";
 container.style.flexWrap = "wrap";
 
@@ -40,10 +39,36 @@ const createGrid = () => {
         square.addEventListener('mouseout', e =>{
             e.target.style.backgroundColor = "lightgrey";
         })
+
+
+
     };
 };
 createGrid();
 
 //Mouse Hovering Styling
+// const block = document.querySelectorAll('.block');
+// block.forEach(block => {
+//     //On Hover Color Styling
+//     block.addEventListener('mouseover', e => {
+//         e.target.style.backgroundColor = "lightblue";
+//     })
 
-
+//     block.addEventListener('mouseout', e =>{
+//         e.target.style.backgroundColor = "lightgrey";
+//     })
+//     block.addEventListener('mouseover', e=> {
+//         block.addEventListener('mousemove', e => {
+//         const dot = document.createElement('div');
+//         dot.style.position = "absolute";
+//         dot.style.top = `${e.clientY}px`;
+//         // console.log("Client Y: ", e.clientY);
+//         dot.style.left = `${e.clientX}px`;
+//         // console.log("Client X: ", e.clientY);
+//         dot.style.backgroundColor = "red";
+//         dot.style.width = "3px";
+//         dot.style.height = "3px";
+//         block.appendChild(dot);
+//         });
+//     });
+// })
