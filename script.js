@@ -43,6 +43,15 @@ const createGrid = () => {
         });
     };
 };
+
+const resetGrid = () => {
+    let grid = document.querySelector('#grid');
+    while(grid.firstChild){
+        grid.removeChild(grid.firstChild);
+    };
+};
+
+
 // createGrid(10);
 
 //Mouse Hovering Styling
