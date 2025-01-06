@@ -46,16 +46,25 @@ const createGrid = () => {
         container.appendChild(square);
         
         //On Hover Color Styling
+        // square.addEventListener('mouseover', e => {
+        //     e.target.style.backgroundColor = "black";
+        // })
+        // square.addEventListener('mouseout', e =>{
+        //     e.target.style.backgroundColor = "lightgrey";
+        // });
         square.addEventListener('mouseover', e => {
-            e.target.style.backgroundColor = "black";
-        })
-
-        square.addEventListener('mouseout', e =>{
-            e.target.style.backgroundColor = "lightgrey";
+            if(useBlack){
+                e.target.style.backgroundColor = "black";
+            } else {
+                e.target.style.backgroundColor = randomColor();
+            }
         });
     };
 };
 
+
+let useBlack = true;
+//Random Color 
 const randomColor = () => {
     let color = "#";
     let char = "0123456789abcdef";
@@ -63,7 +72,28 @@ const randomColor = () => {
         color += char[Math.floor(Math.random() * 16)];
     }
     return color;
-}
+};
+
+const blackBtn = document.createElement('button');
+blackBtn.textContent = "Black Drawing";
+blackBtn.classList = "blackBtn";
+blackBtn.addEventListener('click', e => {
+    useBlack = true;
+    console.log("Drawing in black?: ",useBlack);
+});
+
+
+const rainbowBtn = document.createElement('button');
+rainbowBtn.textContent = "Rainbow Drawing";
+rainbowBtn.classList = "rainbowBtn";
+rainbowBtn.addEventListener('click', e => {
+    useBlack = false;
+    console.log("Drawing in black?: ",useBlack);
+})
+
+const header = document.querySelector(".header");
+header.appendChild(blackBtn);
+header.appendChild(rainbowBtn);
 
 
 
